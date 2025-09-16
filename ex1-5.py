@@ -14,6 +14,13 @@ The program should respond with a message that says hello to
 the user, using his or her name.  (9 lines)
 """
 
+def hello():
+    name = input("what is your name? ")
+    print("hello, " + name)
+
+hello()
+print("today is a perfect square day")
+
 """
 Exercise 3:  Area of a Room
 Write a program that asks the user to enter the width and 
@@ -69,6 +76,6 @@ def bottleDeposits():
     # number_two_decimal = "{:.2f}".format(number_string)
     # print(number_two_decimal)
 
-bottleDeposits()
+#bottleDeposits()
 #Testing Suite
 #areaRoom()
