@@ -87,6 +87,14 @@ when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
 
+def freeFall():
+    initialSpeed = 0
+    acceleration = 9.8
+    distance = float(input("what is the height of the object being dropped? "))
+    vf = (initialSpeed**2 + (2 * acceleration * distance)) ** (1/2)
+    print("the final velocity is" + str(vf))
+
+#freeFall()
 
 """
 Exercise 20: Ideal Gas Law
@@ -112,9 +120,12 @@ by 5/9 and then add 273.15 to it.
 (19 lines)
 """
 
-pressure = float(input("what is the pressure? "))
-volume = float(input("what is the volume? "))
-temperature = float(input("what is the temperature in celsius? "))
-celsiusTemp = temperature + 273.15
-moles = (pressure * volume) / (8.314 * celsiusTemp)
-print("the number of moles according to your inputs are " + str(round(moles, 2)))
+def gasLaw():
+    pressure = float(input("what is the pressure? "))
+    volume = float(input("what is the volume? "))
+    temperature = float(input("what is the temperature in celsius? "))
+    celsiusTemp = temperature + 273.15
+    moles = (pressure * volume) / (8.314 * celsiusTemp)
+    print("the number of moles according to your inputs are " + str(round(moles, 2)))
+
+#gasLaw()
