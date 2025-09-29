@@ -7,6 +7,15 @@ on the outside of an envelope.  Your program does not need to
 read any input from the user.  (9 lines)
 """
 
+def address():
+    name = input("what is your name? ")
+    homeAddress = input("what is the first line of your address? ")
+    cityStateZip = input("what is the second line of your address? ")
+    print(name)
+    print(homeAddress)
+    print(cityStateZip)
+address()
+
 """
 Exercise 2:  Hello
 Write a program that asks the user to enter his or her name.  
@@ -19,7 +28,6 @@ def hello():
     print("hello, " + name)
 
 hello()
-print("today is a perfect square day")
 
 """
 Exercise 3:  Area of a Room
@@ -31,14 +39,13 @@ numbers.  Include units in your prompt and output message;
 either feet or meters, depending on which unit you are more 
 comfortable working with.  (13 lines)
 """
-def areaRoom():
-    print("Area of Room")
-    units = input("What units are you using?  feet or meters: ")
-    width = float(input("Width: "))
-    length = float(input("Length: "))
+def area():
+    roomWidth = input("what is the width of the room, in feet? ")
+    roomLength = input("what is the length of the room, in feet? ")
+    roomArea = float(roomWidth) * float(roomLength)
+    print("the area of the room is " + str(roomArea) + " feet")
 
-    areaRoom = width*length
-    print("Area of the room is " + str(areaRoom) + " " + units + " squared")
+area()
 
 """
 Exercise 4:  Area of a Field
@@ -47,6 +54,14 @@ farmer’s field from the user in feet.  Display the
 area of the field in acres.  
 Hint: There are 43,560 square feet in an acre
 """
+
+def areaField():    
+    fieldWidth = input("what is the width of the field, in feet? ")
+    fieldLength = input("what is the length of the field, in feet? ")
+    fieldArea = (float(fieldWidth) * float(fieldLength)) / 43560
+    print("the area of the field is " + str(fieldArea) + " acres")
+
+areaField()
 
 """
 Exercise 5:  Bottle Deposits
@@ -62,20 +77,11 @@ those containers.  Format the output so that it includes a dollar
 sign and always displays exactly two decimal places.  (15 lines)
 """
 
-def bottleDeposits():
-    # reads the number of bottles
-    numOneLiterBottle = int(input("Number of 1L bottles: "))
-    numMoreOneLiterBottle = int(input("Number of more than 1L bottles: "))
-    refund = numMoreOneLiterBottle*0.25+numOneLiterBottle*0.1
-    refund = round(refund, 2)
-    print("Your refund will be: $", "{:.2f}".format(refund))
-    # adding everything greater than 1
+def calculateDeposit():
+    smallBottles = float(input("how many drink containers do you have that are less than 1 liter? "))
+    largeBottles = float(input("how many drink containers do you have that are more than 1 liter? "))
+    deposit = (smallBottles * 0.10) + (largeBottles * 0.25)
+    deposit = round(deposit, 2)
+    print("Your refund will be: $", "{:.2f}".format(deposit))
+calculateDeposit()
 
-
-    # To ensure we have two decimal places
-    # number_two_decimal = "{:.2f}".format(number_string)
-    # print(number_two_decimal)
-
-#bottleDeposits()
-#Testing Suite
-#areaRoom()
