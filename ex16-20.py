@@ -111,3 +111,10 @@ by 5/9 and then add 273.15 to it.
 
 (19 lines)
 """
+
+pressure = float(input("what is the pressure? "))
+volume = float(input("what is the volume? "))
+temperature = float(input("what is the temperature in celsius? "))
+celsiusTemp = temperature + 273.15
+moles = (pressure * volume) / (8.314 * celsiusTemp)
+print("the number of moles according to your inputs are " + str(round(moles, 2)))
