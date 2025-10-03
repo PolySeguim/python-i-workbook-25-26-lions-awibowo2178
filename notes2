@@ -1,0 +1,11 @@
+subjects = ["English", "Math", "Science", "Health", "Economics"]
+for subject in subjects:
+    print("My favorite subject is: ", subject)
+
+counter = 0
+while(counter <= len(subjects)):
+    print("Counter: ", counter)
+    counter = counter + 1
+
+
+

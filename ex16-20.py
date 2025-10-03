@@ -1,3 +1,4 @@
+import math
 
 """
 Exercise 16:  Area and Volume
@@ -9,6 +10,15 @@ module in your calculations.
 Hint:  The are of  circle is computed using the formula area = pi*r**2.  The 
 volume of a sphere is computed using the formula volume = 4/3 * pi * r**3.
 """
+
+def areaAndVolume():
+    radius = float(input("give me a number: "))
+    area = math.pi * radius**2
+    volume = 4/3 * math.pi * radius**3
+    print("the area is " + str(area))
+    print("the volume is " + str(volume))
+
+#areaAndVolume()
 
 """
 Exercise 17:  Heat Capacity
@@ -35,6 +45,19 @@ Hint:  You will need to look up the factor for converting between Joules
 and kilowatt hours to complete the last part of this exercise.
 (25 lines)
 """
+def energy():
+    massWater = int(input("what is the mass of the water in grams? "))
+    tempChange = int(input("what temp change do you want in Celsius? "))
+    amountEnergy = massWater * tempChange * 4.186
+    if (amountEnergy < 0):
+        print("you need to remove " + str(amountEnergy) + " joules")
+    elif (amountEnergy > 0):
+        print("you need to add " + str(amountEnergy) + " joules")
+    kilowatts = amountEnergy * (1/3600000)
+    cost = kilowatts * 0.089
+    print("the cost of heating the water is $" + str(cost))
+
+#energy()
 
 """
 Exercise 18:  Volume of a Cylinder
@@ -44,6 +67,14 @@ cylinder, along with its height, from the user and computes its volume.
 Display the result rounded to one decimal place.
 (15 lines)
 """
+
+def volumeCylinder():
+    radius = float(input("what is the radius? "))
+    height = float(input("what is the height? "))
+    volume = radius * math.pi * radius * height
+    print("the volume of the cylinder is " + str(volume))
+
+#volumeCylinder()
 
 """
 Exercise 19:  Free Fall
@@ -56,6 +87,14 @@ when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
 
+def freeFall():
+    initialSpeed = 0
+    acceleration = 9.8
+    distance = float(input("what is the height of the object being dropped? "))
+    vf = (initialSpeed**2 + (2 * acceleration * distance)) ** (1/2)
+    print("the final velocity is" + str(vf))
+
+#freeFall()
 
 """
 Exercise 20: Ideal Gas Law
@@ -81,5 +120,12 @@ by 5/9 and then add 273.15 to it.
 (19 lines)
 """
 
-if __name__ == "__main__":
-    print("Hi there!")
+def gasLaw():
+    pressure = float(input("what is the pressure? "))
+    volume = float(input("what is the volume? "))
+    temperature = float(input("what is the temperature in celsius? "))
+    celsiusTemp = temperature + 273.15
+    moles = (pressure * volume) / (8.314 * celsiusTemp)
+    print("the number of moles according to your inputs are " + str(round(moles, 2)))
+
+#gasLaw()
